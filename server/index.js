@@ -1,16 +1,12 @@
-require("dotenv").config();
+
 
 const express = require("express");
 const app = express();
-const path = require("path");
 const cors = require("cors");
 
 const mongoose = require("mongoose");
 const Product = require("./models/product");
 
-const session = require("express-session");
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
 mongoose
   .connect("mongodb://localhost:27017/e-commerce")

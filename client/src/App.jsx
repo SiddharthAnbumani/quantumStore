@@ -18,10 +18,12 @@ import { useState } from "react"
 import OauthPage from "./pages/OauthPage"
 import UserProfile from "./pages/UserProfile"
 import UserOrders from "./pages/UserOrders"
+import ProfileOption from "./components/ProfileOption"
 
 
 export default function App(){
   const [isActive,setIsActive] = useState(false);
+  const [profileIsOpen, setProfileIsOpen] = useState(false)
 
 
   return (
@@ -29,10 +31,18 @@ export default function App(){
     <BrowserRouter className=''>
     <Navbar
      isActive={isActive}
-     setIsActive={setIsActive}/>
+     setIsActive={setIsActive}
+     profileIsOpen={profileIsOpen}
+    setProfileIsOpen={setProfileIsOpen}
+     />
     <Cart 
     isActive={isActive}
     setIsActive={setIsActive}/>
+    <ProfileOption 
+    profileIsOpen={profileIsOpen}
+    setProfileIsOpen={setProfileIsOpen}
+
+    />
       <Routes>
         <Route path="/" element={<Landing/>} />
         <Route path="/home" element={<Home/>} />

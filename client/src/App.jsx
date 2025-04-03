@@ -3,23 +3,18 @@ import { BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from "./pages/Home"
 import Landing from "./pages/Landing"
 import AllProducts from "./pages/AllProducts"
-import VendorLogin from "./pages/VendorLogin"
-import VendorSignUp from "./pages/VendorSignUp"
-import BuyerSignUp from "./pages/BuyerSignUp"
-import BuyerLogin from "./pages/BuyerLogin"
 import Navbar from "./components/Navbar"
 import './index.css'
 import MakeProduct from "./pages/MakeProduct"
 import EditProduct from "./pages/EditProduct"
 import IndividualProduct from "./pages/IndividualProduct"
 import Cart from './components/Cart'
-import SignMain from "./pages/SignMain"
-import RegisterMain from "./pages/RegisterMain"
 import { useState } from "react"
-import OauthPage from "./pages/OauthPage"
 import UserProfile from "./pages/UserProfile"
 import UserOrders from "./pages/UserOrders"
 import ProfileOption from "./components/ProfileOption"
+import ErrorPage from "./pages/ErrorPage "
+import SignLogin from "./pages/SignLogin"
 
 
 export default function App(){
@@ -57,18 +52,19 @@ export default function App(){
         <Route path="/allproducts/:productId" element={<IndividualProduct/>} />
         <Route path="/allproducts" element={<AllProducts/>} />
 
-        <Route path="/vendor-sign" element={<VendorSignUp/>} />
+        {/* <Route path="/vendor-sign" element={<VendorSignUp/>} />
         <Route path="/vendor-login" element={<VendorLogin/>} />
 
         <Route path="/buyer-sign" element={<BuyerSignUp/>} />
-        <Route path="/buyer-login" element={<BuyerLogin/>} />
+        <Route path="/buyer-login" element={<BuyerLogin/>} /> */}
 
-        <Route path="/login-main" element={<SignMain/>} />
-        <Route path="/sign-main" element={<RegisterMain/>} />
-        <Route path="/oauth" element={<OauthPage/>} />
+        <Route path="/login" element={<SignLogin/>} />
+
+        {/* <Route path="/sign-main" element={<RegisterMain/>} /> */}
         {/* <Route path="/profile/:user" element={<OauthPage/>} /> */}
         <Route path="/profile" element={<UserProfile/>} />
         <Route path="/profile/orders" element={<UserOrders/>} />
+        <Route path="*" element={<ErrorPage/>} />
         
         {/* <Route path="/cart" element={<Cart/>} /> */}
       </Routes>

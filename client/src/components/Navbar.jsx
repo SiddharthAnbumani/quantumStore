@@ -5,10 +5,6 @@ export default function Navbar({isActive,setIsActive,profileIsOpen,setProfileIsO
     setIsActive(!isActive)
     }
 
-    // const handleProfile = ()=>{
-    //   setProfileIsOpen((prev)=>setProfileIsOpen(!profileIsOpen))
-    // }
-
   return (
 <div className="fixed top-1 left-1 right-1 w-full bg-black/70 backdrop-blur-3xl text-lg text-white p-3 rounded-2xl flex justify-between z-50">
 

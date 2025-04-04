@@ -15,7 +15,7 @@ export default function BuyerLogin(){
       
      { toggleSignIn ? 
 
-     <div className="h-[80%] w-[80%] bg-black/70 backdrop-blur-3xl rounded-t-3xl flex flex-col">
+     <div className="h-[80%] w-[80%] bg-black/70 backdrop-blur-3xl rounded-t-3xl flex flex-col space-y-3">
         <p className="text-4xl font-extrabold text-white text-center m-5">Login</p>
         
         <div className="text-black w-full h-[80%] flex flex-col items-center justify-center space-y-2"> 
@@ -39,9 +39,50 @@ export default function BuyerLogin(){
       
       : 
       
-      <div className="h-[80%] w-[80%] bg-white rounded-t-3xl ">
-        <p className="text-4xl text-white font-extrabold text-center m-5">Sign Up</p>
-      </div> 
+      <div className="h-[80%] w-[80%] bg-black/70 backdrop-blur-3xl rounded-t-3xl flex flex-col space-y-3">
+      <p className="text-4xl font-extrabold text-white text-center m-5">Sign Up</p>
+      
+      <div className="text-black w-full h-[80%] flex flex-col items-center justify-center space-y-2"> 
+       
+        <div className="px-30 flex w-full justify-between space-x-5">
+          <label htmlFor="" className="w-1/3 text-white font-extrabold text-lg mr-5">First Name: </label>
+          <input type="email"  className=" bg-white/30 backdrop-blur-2xl py-1.5 w-2/3 rounded-lg"/>
+
+          <label htmlFor="" className="w-1/3 text-white font-extrabold text-lg mr-5">Last Name : </label>
+          <input type="email"  className=" bg-white/30 backdrop-blur-2xl py-1.5 w-2/3 rounded-lg"/>
+        </div>
+
+        <div className="px-30 flex w-full justify-between space-x-5">
+          <label htmlFor="" className="w-1/3 text-white font-extrabold text-lg mr-5">Age : </label>
+          <input type="number"  className=" bg-white/30 backdrop-blur-2xl py-1.5 w-2/3 rounded-lg"/>
+
+          <label htmlFor="" className="w-1/3 text-white font-extrabold text-lg mr-5">Gender: </label>
+          {/* <input type=""  className=" bg-white/30 backdrop-blur-2xl py-1.5 w-2/3 rounded-lg"/> */}
+          <select name="" id="" className="bg-white/60 text-center">
+            <option value="*">--Select--</option>
+            <option value="male">Male</option>
+            <option value="female"> Female</option>
+            <option value="rather not say"> Rather not Say</option>
+          </select>
+        </div>
+
+        <div className="px-30 flex w-full justify-center">
+          <label htmlFor="" className="w-1/3 text-white font-extrabold text-lg mr-5">Email : </label>
+          <input type="email"  className=" bg-white/30 backdrop-blur-2xl py-1.5 w-2/3 rounded-lg"/>
+        </div>
+
+        <div className=" px-30 flex w-full justify-center ">
+          <label htmlFor="" className="w-1/3 text-white font-extrabold text-lg mr-5">Password : </label>
+          <input type="password"  className="bg-white/30 backdrop-blur-2xl py-1.5 w-2/3 rounded-xl text-white"/>
+        </div>
+
+        <CusButton
+        text='Sign Up'
+        btnClass='bg-green-400 my-5'
+        />
+        <OauthButton  oauthClass='my-5'/>
+      </div>
+    </div> 
       }
 
      {toggleSignIn ? 

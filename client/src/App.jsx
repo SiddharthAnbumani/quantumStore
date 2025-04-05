@@ -47,7 +47,7 @@ export default function App(){
         <Route path="/" element={<Landing/>} />
         <Route path="/home" element={<Home/>} />
         <Route path="/makeproduct" element={<MakeProduct/>} />
-        <Route path="/editproduct" element={<EditProduct/>} />
+        <Route path="/edit-product/:productId" element={<EditProduct/>} />
         <Route path="/allproducts" element={<AllProducts/>} />
         <Route path="/allproducts/:productId" element={<IndividualProduct/>} />
         <Route path="/allproducts" element={<AllProducts/>} />

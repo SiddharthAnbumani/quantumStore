@@ -2,7 +2,8 @@ import CusButton from "../components/cusButton";
 import Axios from 'axios';
 import { useState, useEffect } from "react";
 import Input from "../components/Input";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function EditProduct() {
   const [productData, setProductData] = useState({
@@ -14,7 +15,8 @@ export default function EditProduct() {
     InStock: '',
   });
 
-  const productId = '67e8b61149febfa85d9f4cae';
+  const {productId} = useParams()
+
 
   // Fetch The Previous Product Data
   const fetchProductData = async () => {
@@ -72,7 +74,7 @@ export default function EditProduct() {
   }
 
   return (
-    <div className='w-full flex flex-col justify-center items-center'>
+    <div className='h-screen w-full flex flex-col justify-center items-center'>
       <h1 className='text-7xl'>Edit Product</h1>
       <div className="flex flex-col items-center justify-center">
         <form onSubmit={handleSubmit} className='w-full'>
@@ -152,14 +154,22 @@ export default function EditProduct() {
 
           <CusButton
             text='Update Product'
-            btnClass='bg-yellow-500 w-full text-white'
+            btnClass='bg-yellow-500 w-full text-white my-3'
             type='submit'
           />
           <CusButton
             text='Delete Product'
-            btnClass='bg-red-600 w-full text-white'
+            btnClass='bg-red-600 w-full text-white my-3'
             onClick={handleDelete}
           />
+
+          <NavLink 
+          className='px-10 py-2 bg-blue-700 font-bold text-white text-lg
+           rounded-xl hover:scale-110 transition-all duration-150' 
+           to={`/allproducts/${productId}`}>
+            Back to Product 
+           </NavLink>
+
         </form>
       </div>
     </div>

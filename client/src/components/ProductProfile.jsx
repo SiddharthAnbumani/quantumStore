@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
-
+import { useState } from "react";
 export default function ProductProfile({ title, description, id}) {
+
+
   return (
     <div className="w-70 h-80 bg-black/70 backdrop-blur-3xl border-1 rounded-4xl flex flex-col items-center relative">
       <h1 className="text-2xl font-bold py-3 px-2 text-center text-white">{title}</h1>

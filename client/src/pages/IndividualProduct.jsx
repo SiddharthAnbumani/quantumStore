@@ -66,6 +66,11 @@ export default function IndividualProduct() {
         to='/allproducts'>
         Back to Products
       </NavLink>
+      <NavLink 
+    className='font-bold bg-red-500 py-2 px-10 rounded-xl text-white m-2 hover:scale-110 transition-all duration-100' 
+    to={`/edit-product/${productId}`}>
+   Edit Product
+    </NavLink>
     </div>
     </div>
   );

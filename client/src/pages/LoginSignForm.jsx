@@ -58,7 +58,7 @@ export default function BuyerLogin(){
 
           <label htmlFor="" className="w-1/3 text-white font-extrabold text-lg mr-5">Gender: </label>
           {/* <input type=""  className=" bg-white/30 backdrop-blur-2xl py-1.5 w-2/3 rounded-lg"/> */}
-          <select name="" id="" className="bg-white/60 text-center">
+          <select name="" id="" className="bg-white/60 text-center rounded-lg">
             <option value="*">--Select--</option>
             <option value="male">Male</option>
             <option value="female"> Female</option>

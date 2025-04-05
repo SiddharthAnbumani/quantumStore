@@ -6,6 +6,15 @@ import Axios from 'axios'
 export default function AllProducts(){
 
     const [allProducts,setAllProducts] = useState([])
+    const [cart,setCart] = useState([])
+
+    const toggleCart = (productId)=>{
+        setCart(prev=>
+            prev.includes(productId) 
+            ? prev.filter(id => id !== productId)
+            : [...prev,productId]
+        )
+    }
 
     const fetchAllProducts = async(evt)=>{
         try {
@@ -27,7 +36,7 @@ export default function AllProducts(){
             This is all Products
             </h1> */}
 
-            <div className="m-10 flex justify-center ">
+            <div className="m-10 flex justify-end">
             <NavLink  
             className='bg-blue-600 p-3 
             rounded-2xl text-white font-bold mx-3' 
@@ -35,13 +44,7 @@ export default function AllProducts(){
             Add New Products
             </NavLink>
 
-            <NavLink  
-            className='bg-yellow-400 p-3 mx-3 
-            rounded-2xl text-white font-bold' 
-            to='/editproduct'>
-            Edit Products
-            </NavLink>
-                </div>
+            </div>
             
             <div className="flex justify-center flex-wrap gap-4">
                 {allProducts.length > 0 ? (
@@ -51,6 +54,8 @@ export default function AllProducts(){
                     id = {product._id} 
                     title={product.ProductName} 
                     description={product.Description} 
+                    isOnCart = {cart.includes(product._id)}
+                    onToggleCart = {toggleCart}
                     />
 
                     ))

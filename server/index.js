@@ -18,19 +18,6 @@ mongoose
   app.use(express.urlencoded({extended: true}));
   app.use(cors());
 
-
-// app.post("/api/vendor-registration", async (req, res) => {
-//   const data = req.body;
-//   console.log("Received data:", data);
-//   res.status(200).json({ message: "Vendor registration successful" });
-// });
-
-// app.post("/api/user-registration", async (req, res) => {
-//   const data = req.body;
-//   console.log("Received Data: ", data);
-//   res.status(200).json({ message: "User Registration Successful" });
-// });
-
 app.post("/api/add-product", async (req, res) => {
   const productData = req.body;
   const addProduct = new Product(productData);

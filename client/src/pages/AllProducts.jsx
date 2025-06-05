@@ -46,7 +46,8 @@ export default function AllProducts(){
 
             </div>
             
-            <div className="flex justify-center flex-wrap gap-4">
+            {/* <div className="flex justify-center flex-wrap gap-4"> */}
+            <div className="grid grid-cols-5 justify-items-center space-y-5">
                 {allProducts.length > 0 ? (
                     allProducts.map((product) => (
                     <ProductProfile 
